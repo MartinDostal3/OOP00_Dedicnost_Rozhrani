@@ -34,7 +34,27 @@ namespace OOP00_Dedicnost
 
         private void button2_Click(object sender, EventArgs e)
         {
-           
+            Vedouci vedouci = new Vedouci("jan","Novak", 125, 1255);
+            MessageBox.Show(vedouci.ToString());
+            MessageBox.Show("priplatek za vedeni je: " + vedouci.GetPriplatekZavedeni());
+            vedouci.SetPriplatekZavedeni(6969);
+            MessageBox.Show("priplatek za vedeni je: " + vedouci.GetPriplatekZavedeni());
+            vedouci.OdpracujHodiny(1000);
+            MessageBox.Show(vedouci.ToString());
+            MessageBox.Show(vedouci.GetPriplatekZavedeni().ToString());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            Ridic ridic = new Ridic("arnošt", "lakatoš", 300);
+            MessageBox.Show(ridic.ToString());
+            ridic.SetSkupina("C");
+            ridic.SetPrijmeni("anál");
+            ridic.OdpracujHodiny(48);
+            MessageBox.Show(ridic.ToString());
+
+
         }
     }
 }

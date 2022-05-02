@@ -30,11 +30,11 @@ namespace OOP00_Dedicnost
         {
             this.prijmeni = prijmeni;
         }
-        public void OdpracujHodiny(int hodiny)
+        public virtual void OdpracujHodiny(int hodiny)
         {
             odpracHodiny += hodiny;
         }
-        public double VypoctiMzdu()
+        public virtual/*potomci mohou metodu přepsat*/ double VypoctiMzdu()
         {
             return odpracHodiny * HodinovaMzda;
         }
@@ -44,6 +44,7 @@ namespace OOP00_Dedicnost
         }
         public override string ToString()
         {
+            
             string maBonus = "NE (Nemá nárok)";
             if (Bonusy()) maBonus = "ANO (Má nárok)";
             string s = "Jméno: " + jmeno
@@ -54,5 +55,6 @@ namespace OOP00_Dedicnost
                      + "\nZaměstnanecké bonusy: " + maBonus;
             return s;
         }
+        
     }
 }
